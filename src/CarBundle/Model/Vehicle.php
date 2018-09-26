@@ -2,6 +2,8 @@
 
 namespace CarBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -50,6 +52,45 @@ class Vehicle
      * @ORM\Column(name="odometer", type="integer")
      */
     private $odometer;
+
+    /**
+     * One Vehicle has Many Services
+     *
+     * @ORM\OneToMany(targetEntity="Service", mappedBy="vehicle", cascade={"persist"})
+     */
+    private $services;
+
+    public function __construct()
+    {
+        $this->services = new ArrayCollection();
+    }
+    public function __toString()
+    {
+        return strval($this->id);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServices()
+    {
+        return $this->services->toArray();
+    }
+
+    public function addService(Service $service)
+    {
+        if ($this->services->contains($service)) {
+            throw new \Exception("Cannot add same service twice");
+        }
+
+        $this->services->add($service);
+        $service->setVehicle($this);
+    }
+
+    public function removeService(Service $service)
+    {
+      $this->services->removeElement($service);
+    }
 
     /**
      * Get id

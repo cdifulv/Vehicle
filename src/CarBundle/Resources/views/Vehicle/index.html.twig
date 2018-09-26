@@ -25,10 +25,16 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('Vehicle_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('Vehicle_show', { 'id': entity.id }) }}">Show Vehicle Info</a>
                     </li>
                     <li>
-                        <a href="{{ path('Vehicle_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('Vehicle_edit', { 'id': entity.id }) }}">Edit Vehicle Info</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Service_index', { 'vehicleId': entity.id }) }}">Show Service Info</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Service_new', {'vehicleId': entity.id}) }}">Add Service Info</a>
                     </li>
                 </ul>
                 </td>

@@ -1,3 +1,7 @@
+car_model:
+    resource: "@CarBundle/Resources/config/routing/service.yml"
+    prefix:   /vehicle/{vehicleId}/service
+
 car_Vehicle:
     resource: "@CarBundle/Resources/config/routing/vehicle.yml"
     prefix:   /vehicle

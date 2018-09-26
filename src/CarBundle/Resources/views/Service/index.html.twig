@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Model\Service list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Service ID</th>
+                <th>Service Date</th>
+                <th>Service Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('Service_show', {'vehicleId': entity.vehicle.id, 'id': entity.serviceID }) }}">{{ entity.serviceID }}</a></td>
+                <td>{% if entity.serviceDate %}{{ entity.serviceDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.serviceType }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('Service_show', { 'vehicleId': entity.vehicle.id, 'id': entity.serviceID }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Service_edit', { 'vehicleId': entity.vehicle.id, 'id': entity.serviceID }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('Service_new', { 'vehicleId': vehicleId}) }}">
+                Create a new entry
+            </a>
+        </li>
+            <li>
+                <a href="{{ path('Vehicle') }}">
+                    Back to Vehicle List
+                </a>
+            </li>
+    </ul>
+    {% endblock %}

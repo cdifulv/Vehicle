@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Model\Service</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Service Id</th>
+                <td>{{ entity.serviceID }}</td>
+            </tr>
+            <tr>
+                <th>Service Date</th>
+                <td>{{ entity.serviceDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Service Type</th>
+                <td>{{ entity.serviceType }}</td>
+            </tr>
+            <tr>
+                <th>Service Mileage</th>
+                <td>{{ entity.serviceMileage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('Service_index', {'vehicleId': entity.vehicle.id}) }}">
+            Back to Service List
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('Service_edit', { 'vehicleId': entity.vehicle.id, 'id': entity.serviceID }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

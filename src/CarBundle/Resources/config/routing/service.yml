@@ -1,0 +1,31 @@
+Service_index:
+    path:     /
+    defaults: { _controller: "CarBundle:Service:index" }
+    methods:  GET
+
+Service_show:
+    path:     /{id}/show
+    defaults: { _controller: "CarBundle:Service:show" }
+
+Service_new:
+    path:     /new
+    defaults: { _controller: "CarBundle:Service:new" }
+
+Service_create:
+    path:     /create
+    defaults: { _controller: "CarBundle:Service:create" }
+    methods:  POST
+
+Service_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CarBundle:Service:edit" }
+
+Service_update:
+    path:     /{id}/update
+    defaults: { _controller: "CarBundle:Service:update" }
+    methods:  [POST, PUT]
+
+Service_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CarBundle:Service:delete" }
+    methods:  [POST, DELETE]
