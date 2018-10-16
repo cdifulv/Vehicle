@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea406c84-745e-4090-bb31-e343d5cb1a63" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180926174733.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Controller/ServiceItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Controller/ServiceItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Controller/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Controller/VehicleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Form/ServiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Form/ServiceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Form/VehicleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Form/VehicleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Model/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Model/Service.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Model/ServiceItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Model/ServiceItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Model/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Model/Vehicle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/config/doctrine/Test.orm.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/views/Service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Resources/views/Service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/views/Service/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Resources/views/Service/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarBundle/Resources/views/Vehicle/show.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="ea406c84-745e-4090-bb31-e343d5cb1a63" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -462,12 +443,12 @@
       <workItem from="1538140224323" duration="1254000" />
       <workItem from="1539091866992" duration="47701000" />
       <workItem from="1539604368671" duration="17807000" />
-      <workItem from="1539705641906" duration="234000" />
+      <workItem from="1539705641906" duration="1052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133261000" />
+    <option name="totallyTimeSpent" value="134079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
