@@ -31,14 +31,6 @@ class Service
     private $serviceDate;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="service_type", type="string", length=255)
-     *
-     */
-    private $serviceType;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="service_mileage", type="integer")
@@ -51,6 +43,13 @@ class Service
      * @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id")
      */
     private $vehicle;
+
+    /**
+     * Many Services have the same service Item.
+     * @ORM\ManyToOne(targetEntity="ServiceItem", inversedBy="services")
+     * @ORM\JoinColumn(name="service_item_id", referencedColumnName="id")
+     */
+    private $serviceItem;
 
     /**
      * @return int
@@ -89,24 +88,6 @@ class Service
     }
 
     /**
-     * @return string
-     */
-    public function getServiceType()
-    {
-        return $this->serviceType;
-    }
-
-    /**
-     * @param string $serviceType
-     * @return Service
-     */
-    public function setServiceType($serviceType)
-    {
-        $this->serviceType = $serviceType;
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getVehicle()
@@ -139,6 +120,24 @@ class Service
     public function setServiceMileage($serviceMileage)
     {
         $this->serviceMileage = $serviceMileage;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServiceItem()
+    {
+        return $this->serviceItem;
+    }
+
+    /**
+     * @param mixed $serviceItem
+     * @return Service
+     */
+    public function setServiceItem($serviceItem)
+    {
+        $this->serviceItem = $serviceItem;
         return $this;
     }
 

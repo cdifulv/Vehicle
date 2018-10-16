@@ -3,8 +3,11 @@
 {% block body -%}
     <h1>Vehicle creation</h1>
 
-    {{ form(form) }}
-
+    {{ form_start(form) }}
+        {{ form_row(form.vehicleManufacturer) }} {# <select id="vehicle_manufacturer" ... #}
+        {{ form_row(form.vehicleModels) }} {# <select id="vehicle_models" ... #}
+        {#...#}
+    {{ form_end(form) }}
         <ul class="record_actions">
     <li>
         <a href="{{ path('Vehicle') }}">
@@ -12,4 +15,25 @@
         </a>
     </li>
 </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var $manufacturer = $('#carbundle_vehicle_vehicleManufacturer');
+        $manufacturer.change(function() {
+            var $form = $(this).closest('form');
+            var data = {};
+            data[$manufacturer.attr('name')] = $manufacturer.val();
+            $.ajax({
+                url: $form.attr('action'),
+                type: $form.attr('method'),
+                data: data,
+                success: function(html) {
+                    $('#carbundle_vehicle_vehicleModels').replaceWith(
+                        $(html).find('#carbundle_vehicle_vehicleModels')
+                    );
+                }
+            });
+        });
+    </script>
 {% endblock %}

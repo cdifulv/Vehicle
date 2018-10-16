@@ -32,21 +32,6 @@ class Vehicle
     private $year;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="make", type="string", length=255)
-     *
-     */
-    private $make;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="model", type="string", length=255)
-     */
-    private $model;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="odometer", type="integer")
@@ -60,6 +45,20 @@ class Vehicle
      */
     private $services;
 
+    /**
+     * Many Vehicles have One Manufacturer.
+     * @ORM\ManyToOne(targetEntity="VehicleManufacturer", inversedBy="vehicles")
+     * @ORM\JoinColumn(name="manufacturer_id", referencedColumnName="id")
+     */
+    private $vehicleManufacturer;
+
+    /**
+     * Many Vehicles have One Model.
+     * @ORM\ManyToOne(targetEntity="VehicleModels", inversedBy="vehicles")
+     * @ORM\JoinColumn(name="model_id", referencedColumnName="id")
+     */
+    private $vehicleModels;
+
     public function __construct()
     {
         $this->services = new ArrayCollection();
@@ -67,6 +66,7 @@ class Vehicle
     public function __toString()
     {
         return strval($this->id);
+
     }
 
     /**
@@ -121,42 +121,6 @@ class Vehicle
     }
 
     /**
-     * @return string
-     */
-    public function getMake()
-    {
-        return $this->make;
-    }
-
-    /**
-     * @param string $make
-     * @return Vehicle
-     */
-    public function setMake($make)
-    {
-        $this->make = $make;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getModel()
-    {
-        return $this->model;
-    }
-
-    /**
-     * @param string $model
-     * @return Vehicle
-     */
-    public function setModel($model)
-    {
-        $this->model = $model;
-        return $this;
-    }
-
-    /**
      * @return float
      */
     public function getOdometer()
@@ -173,6 +137,44 @@ class Vehicle
         $this->odometer = $odometer;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVehicleManufacturer()
+    {
+        return $this->vehicleManufacturer;
+    }
+
+    /**
+     * @param mixed $vehicleManufacturer
+     * @return Vehicle
+     */
+    public function setVehicleManufacturer($vehicleManufacturer)
+    {
+        $this->vehicleManufacturer = $vehicleManufacturer;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVehicleModels()
+    {
+        return $this->vehicleModels;
+    }
+
+    /**
+     * @param mixed $vehicleModels
+     * @return Vehicle
+     */
+    public function setVehicleModels($vehicleModels)
+    {
+        $this->vehicleModels = $vehicleModels;
+        return $this;
+    }
+
+
 
 
 }

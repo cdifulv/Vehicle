@@ -30,6 +30,13 @@ class ServiceItem
     private $itemType;
 
     /**
+     * One Service Item can be a part of many Services
+     *
+     * @ORM\OneToMany(targetEntity="Service", mappedBy="serviceItem", cascade={"persist"})
+     */
+    private $services;
+
+    /**
      * @return int
      */
     public function getId()
@@ -62,6 +69,24 @@ class ServiceItem
     public function setItemType($itemType)
     {
         $this->itemType = $itemType;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+    /**
+     * @param mixed $services
+     * @return ServiceItem
+     */
+    public function setServices($services)
+    {
+        $this->services = $services;
         return $this;
     }
 }

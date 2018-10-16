@@ -17,7 +17,7 @@
             <tr>
                 <td><a href="{{ path('Service_show', {'vehicleId': entity.vehicle.id, 'id': entity.serviceID }) }}">{{ entity.serviceID }}</a></td>
                 <td>{% if entity.serviceDate %}{{ entity.serviceDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.serviceType }}</td>
+                <td>{{ entity.serviceItem.itemType }}</td>
                 <td>
                 <ul>
                     <li>

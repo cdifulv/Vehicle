@@ -19,8 +19,8 @@
             <tr>
                 <td><a href="{{ path('Vehicle_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.year }}</td>
-                <td>{{ entity.make }}</td>
-                <td>{{ entity.model }}</td>
+                <td>{{ entity.vehicleManufacturer.manufacturer }}</td>
+                <td>{{ entity.vehicleModels.model }}</td>
                 <td>{{ entity.odometer }}</td>
                 <td>
                 <ul>

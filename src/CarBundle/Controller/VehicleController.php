@@ -4,7 +4,11 @@ namespace CarBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
+use CarBundle\Model\VehicleModels;
+use CarBundle\Model\VehicleManufacturer;
 use CarBundle\Model\Vehicle;
 use CarBundle\Form\VehicleType;
 
