@@ -1,4 +1,12 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 car:
     resource: "@CarBundle/Resources/config/routing.yml"
     prefix:   /
 
+user_annotation:
+    resource: "@UserBundle/Controller"
+    prefix: /
+    type:     annotation

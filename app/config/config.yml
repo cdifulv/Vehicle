@@ -75,6 +75,10 @@ doctrine:
             type: annotation
             dir: '%kernel.root_dir%/../src/CarBundle/Model'
             prefix: CarBundle
+          UserBundle:
+              type: annotation
+              dir:  '%kernel.root_dir%/../src/UserBundle/Model'
+              prefix: UserBundle
 
 # Swiftmailer Configuration
 swiftmailer:
