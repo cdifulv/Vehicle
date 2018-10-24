@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20181010175721 extends AbstractMigration
+class Version20181024191243 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -16,9 +16,7 @@ class Version20181010175721 extends AbstractMigration
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE service DROP service_type');
     }
 
     /**
@@ -27,8 +25,19 @@ class Version20181010175721 extends AbstractMigration
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE service ADD service_type VARCHAR(255) NOT NULL');
+    }
+
+    public function postUp(Schema $schema)
+    {
+        parent::postUp($schema);
+
+        $manufacturers = array('Honda', 'Toyota', 'Chevrolet', 'Ford', 'Subaru', 'BMW', 'Audi', 'Volkswagen', 'Volvo',
+            'Dodge', 'Nissan', 'Lexus', 'Jeep');
+
+        for($i=0; $i<count($manufacturers); $i++)
+        {
+            $this->connection->insert('vehicle_manufacturer', array('manufacturer' => $manufacturers[$i]));
+        }
     }
 }

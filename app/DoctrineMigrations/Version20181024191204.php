@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20181012130508 extends AbstractMigration
+class Version20181024191204 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -32,12 +32,11 @@ class Version20181012130508 extends AbstractMigration
     {
         parent::postUp($schema);
 
-        $manufacturers = array('Honda', 'Toyota', 'Chevrolet', 'Ford', 'Subaru', 'BMW', 'Audi', 'Volkswagen', 'Volvo',
-            'Dodge', 'Nissan', 'Lexus', 'Jeep');
+        $services = array('Oil Change', 'Brake Job', 'Tire Change');
 
-        for($i=0; $i<count($manufacturers); $i++)
+        for($i=0; $i<count($services); $i++)
         {
-            $this->connection->insert('vehicle_manufacturer', array('manufacturers' => $manufacturers[$i]));
+            $this->connection->insert('service_item', array('item_type' => $services[$i]));
         }
     }
 }
